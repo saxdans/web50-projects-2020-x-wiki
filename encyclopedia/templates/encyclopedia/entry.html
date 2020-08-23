@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+   
+    <div class="w-75 m-3"> {{ content | safe }}</div>
+    
+    <form action="{% url 'wiki:editpage' title %}">
+       
+    <div class="w-75 m-3" justify-content="flex-end"  align="right"><input class="btn btn-default btn-outline-secondary" type="submit" value="Edit page" name="{{ title }}" id="Edit">
+    </div>
+    </form>
+    
+
+{% endblock %}

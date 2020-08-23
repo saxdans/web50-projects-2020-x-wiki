@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create page
+{% endblock %}
+
+{% block body %}
+    <h1 class="m-3">Create page</h1>
+    <h3 class="m-3">{{ message }}</h3>
+    <div class="form-group">
+    <form  method="post">
+        {% csrf_token %}
+        {{ new_page_form.as_p }}
+        <div class="w-75 m-3" justify-content="flex-end"  align="right"><input class="btn btn-default btn-outline-secondary" type="submit" value="Create page" name="PostEntry">
+            </div>
+        </form>
+    </div>
+{% endblock %}

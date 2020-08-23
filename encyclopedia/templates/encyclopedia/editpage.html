@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit page
+{% endblock %}
+
+{% block body %}
+    <h1 class="m-3">Edit page</h1>
+    <h3 class="m-3">{{ title }}</h3>
+    <div class="form-group">
+    <form  method="post">
+        {% csrf_token %}
+        {{ edit_page_form.as_p }}
+        <div class="w-75 m-3" justify-content="flex-end"  align="right"><input class="btn btn-default btn-outline-secondary" type="submit" value="Post edit" name="EditEntry">
+            </div>
+        </form>
+    </div>
+{% endblock %}
